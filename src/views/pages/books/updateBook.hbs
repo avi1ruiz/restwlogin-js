@@ -1,0 +1,19 @@
+<div class="info">
+   {{#with book}}
+      <p>{{this.title}}</p>
+      <p>{{this.author}}</p>
+      <p>{{this.rate}}</p>
+   {{/with}}
+</div>
+
+<form>
+   <input type="text" name="title" />
+   <input type="text" name="author" />
+   <input type="number" name="rate" />
+   <input type="text" name="photo_dir" />
+   <button
+      type="submit"
+      formmethod="post"
+      formaction="/books/edit/{{book._id}}"
+   >Edit!</button>
+</form>

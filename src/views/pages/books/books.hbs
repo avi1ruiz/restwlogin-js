@@ -1,0 +1,35 @@
+<div class="chat">
+   <a href="/books/add">add</a>
+   <form>
+      <button formaction="/signout" formmethod="post">Sign Out</button>
+   </form>
+   <h1>hola
+      {{user}}
+   </h1>
+   <ul>
+      {{#each books}}
+         <li>
+            <img src="{{photo_dir}}" alt="">
+            {{title}}
+            {{author}}
+            {{rate}}
+            <form>
+               <button
+                  type="submit"
+                  formaction="books/delete/{{_id}}"
+                  formmethod="post"
+               >Delete</button>
+               <button
+                  type="submit"
+                  formaction="books/edit/{{_id}}"
+                  formmethod="get"
+               >Edit</button>
+            </form>
+         </li>
+      {{else}}
+
+         <p>no books</p>
+
+      {{/each}}
+   </ul>
+</div>
